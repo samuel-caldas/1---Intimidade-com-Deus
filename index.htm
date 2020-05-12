@@ -1,0 +1,403 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Intimidade com Deus</title>
+<script type="text/javascript" src="js/smoothScroll.js"></script>
+<script type="text/javascript" src="js/secure.js"></script>
+<script type="text/javascript" src="js/windowsize.js"></script>
+<script>
+function setOpacity(id,opacity){
+    var object=document.getElementById(id).style;
+    object.opacity=(opacity/100);
+    object.MozOpacity=(opacity/100 );
+    object.KhtmlOpacity=(opacity/100 );
+    object.filter="alpha(opacity="+opacity+")";
+}
+window.onload=function(){
+	sec();
+	document.getElementById("css").href="style.php?h="+WindowHeight()+"&w="+WindowWidth();
+	setTimeout(function(){
+		setOpacity('menu',100);
+		setTimeout(function(){
+			setOpacity('load',0);
+			setTimeout(function(){
+				var pa=document.getElementsByTagName('div');
+				for(i=0;i<=pa.length;i++){
+					if(pa[i].className=='pag' || pa[i].className=='paw'){
+						setOpacity(pa.item(i).id,100);
+					}
+				}
+			},600);
+		},1000);
+	},3000);
+	return true;
+}
+
+function active(id){
+	var a=document.getElementsByTagName('a');
+	for(i=0;i<=a.length;i++){
+		if(a[i].id!=('btn'+id)){
+			a.item(i).className='btn';
+		}else{
+			a.item(i).className='btnsel';
+		}
+	}
+	return true;
+}
+function change(id,titulo, cor){
+	smoothScroll(id);
+	document.getElementById('titulo').innerHTML=titulo;
+	document.getElementById('body').className=cor;
+	active(id);
+}
+</script>
+<link id="css" href=""	rel="stylesheet" type="text/css">
+<link href="white.css"	rel="stylesheet" type="text/css">
+<link href="gray.css"	rel="stylesheet" type="text/css">
+<style type="text/css">
+body, HTML {
+	background-color: #ff6600;
+}
+HTML, body, a, a:hover, a:link, a:visited, a:active{
+	font-family: "Segoe UI";
+	font-weight: lighter;
+	display: block;
+	margin: 0px;
+	padding: 0px;
+	color:#EEE;
+	overflow:hidden;
+}
+#menu{
+	width: 250px;
+	z-index: 20;
+	display: block;
+	padding: 0px;
+	margin: 0px;
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	bottom: 0px;
+	filter: alpha(opacity=0); /* internet explorer */
+	-khtml-opacity: 0.0;      /* khtml, old safari */
+	-moz-opacity: 0.0;       /* mozilla, netscape */
+	opacity: 0.0;           /* fx, safari, opera */
+}
+#menu #titulo{
+	line-height: 100px;
+	display: block;
+	float: left;
+	height: 100px;
+	width: 250px;
+	margin: 0px;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 50px;
+	clear: both;
+	font-size: 40px;
+}
+#menu .btn, #menu .btnsel{
+	line-height: 50px;
+	text-align: left;
+	vertical-align: middle;
+	padding-left: 50px;
+	height: 50px;
+	clear: both;
+	float: left;
+	width: 200px;
+	display: block;
+	text-decoration: none;
+	cursor: default;
+}
+#extras{
+	position: absolute;
+	height: 125px;
+	width: 250px;
+	left: 0px;
+	bottom: 0px;
+}
+.pag, .paw{
+	display: block;
+	clear: both;
+	margin: 0px;
+	padding-right: 100px;
+	padding-bottom: 0px;
+	padding-left: 350px;
+	z-index: 100;
+	overflow-y: auto;
+	overflow-x: hidden;
+	cursor: default;
+	min-height: 768px;
+	filter: alpha(opacity=0);	/* internet explorer */
+	-khtml-opacity: 0.0;		/* khtml, old safari */
+	-moz-opacity: 0.0;			/* mozilla, netscape */
+	opacity: 0.0;				/* fx, safari, opera */
+	padding-top: 0px;
+}
+#blog .post{
+	width: 100%;
+	clear: left;
+	border: 2px solid #dedede;
+	margin-top: 25px;
+}
+#blog .post:last-child{
+	margin-bottom: 25px;
+	margin-top: 25px;
+}
+#blog .post .title, #agenda .event .title {
+	font-size: 25px;
+	line-height: 50px;
+	background-color: #ff7d23;
+	padding-left: 25px;
+	display: block;
+	height: 50px;
+	clear: left;
+	cursor: default;
+	color: #FFF;
+}
+#blog .post .content {
+	font-size: 15px;
+	line-height: 16px;
+	color: #666;
+	padding-top: 5px;
+	padding-right: 25px;
+	padding-bottom: 5px;
+	padding-left: 25px;
+}
+#blog .post .data {
+	font-size: 20px;
+	line-height: 25px;
+	font-weight: lighter;
+	color: #999;
+	height: 25px;
+	padding-left: 25px;
+	background-color: #f4f4f4;
+}
+#agenda .event{
+	background-color: #696969;
+	display: block;
+	clear: both;
+	width: 100%;
+	border: 2px solid #E6E7E8;
+	margin-top: 25px;
+}
+#agenda .event:last-child{
+	margin-bottom: 25px;
+	margin-top: 25px;
+}
+#agenda .event .content{
+	font-size: 15px;
+	line-height: 16px;
+	font-weight: lighter;
+	color: #FFF;
+	padding-top: 5px;
+	padding-right: 25px;
+	padding-bottom: 5px;
+	padding-left: 25px;
+}
+#menu .btnsel{
+	background-color:#ff7d23;
+}
+#inicio{
+	margin: 0px;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 250px;
+}
+#tabcover{
+	margin: 0px;
+	padding: 0px;
+}
+textarea, input{
+	width: 250px;
+	height: 25px;
+	margin: 3px;
+	padding-top: 1px;
+	padding-right: 3px;
+	padding-bottom: 1px;
+	padding-left: 3px;
+	font-size: 15px;
+	display: block;
+}
+textarea{
+	height:80px;
+}
+#load{
+	height: 200px;
+	width: 200px;
+	z-index: 0;
+	top: 50%;
+	position: fixed;
+	left: 50%;
+	margin: -100px;
+}
+#historia .historia {
+	padding-top: 100px;
+	padding-bottom: 100px;
+}
+</style>
+</head>
+<body class="gray" id="body">
+
+<div id="menu">
+  <div id="titulo">Início</div>
+	<a onClick="change('inicio','In&iacute;cio','gray');" class="btnsel" id="btninicio">Início</a>
+	<a onClick="change('historia','Hist&oacute;ria','white');"	class="btn" id="btnhistoria">História</a>
+    <a onClick="change('fotos','Fotos','gray')"		class="btn" id="btnfotos">Fotos</a>
+    <a onClick="change('blog','Blog','white')"		class="btn" id="btnblog">Blog</a>
+    <a onClick="change('agenda','Agenda','gray')"	class="btn" id="btnagenda">Agenda</a>
+    <a onClick="change('produtos','Produtos','white')"	class="btn" id="btnprodutos">Produtos</a>
+    <a onClick="change('contato','Contato','gray')"	class="btn" id="btncontato">Contato</a>
+    <div id="extras">
+    	<a class="btn">Twitter</a>
+        <a onClick="window.open('http://www.facebook.com/pages/Ministério-Intimidade-com-Deus/501694069865533','_blank')" class="btn">Facebook</a>
+    </div>
+</div>
+<div class="pag" id="inicio">
+<table id="tabcover" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td align="left" valign="middle"><img src="img/capa.jpg" alt="Capa" name="capa" id="capa"></td>
+  </tr>
+</table>
+</div>
+<div class="paw" id="historia">
+	<div class="historia">
+Pra mim é um prazer falar sobre o surgimento do ministério, é engraçado porque ele surgiu em minha vida sem eu saber que futuramente viria a ser um ministério, Deus tem os seus mistérios!
+
+Lembro-me bem que eu era uma cristã superficial, sem experiências com Deus, sem nenhuma persistência, apenas uma religiosa.
+
+E num belo dia, eu fiz uma oração que hoje considero muito desaforada, disse assim para Deus: “Senhor, tu sabes que amo te adorar, e quando as coisas estão bem te adoro melhor ainda, então providencie para que tudo fique bem comigo e eu te adorarei melhor”. Que tragédia esta oração, quanta imaturidade, que vergonha sinto hoje de ter feito isso, conto porque faz parte da História do Ministério, senão guardaria para mim. Mas Deus é Deus e ama seus filhos e sei que sua resposta para mim foi enxergar o que viria pela frente, o tratamento de Deus em nós é sempre visando o que ele mesmo está preparando pra nós futuramente. Então delicadamente, Ele me respondeu assim: “Vânia, posso te dar tudo o que você precisa e sonha, mas antes preciso te fazer me adorar pelo que eu sou, não pelo que eu possa te dar, VOCÊ NÃO TEM INTIMIDADE COMIGO E PRECISO TE ENSINAR ISSO. Houve um silêncio...
+
+E agora? E eu que achava que eu era 100% diante de Deus.
+Comecei a chorar naquele momento, o Espírito Santo se encarregou de quebrantar meu coração e me mostrar quem eu era. Quanta dor, então Deus inicia comigo uma longa caminhada pelo deserto. Quanta dificuldade falimos financeiramente falando, Deus nos fez experimentar nossa miserabilidade, Mas foi no deserto que ele me levou a ver a sua Santidade, seu amor, seus milagres, e nesse tempo eu aprendi que precisava ter intimidade com Deus, foram dias difíceis, dias intermináveis, noites mal dormidas, mas dias de muita busca e eu não troco esses dias de deserto pelos bons tempos mas longe de ser íntimo de Deus,ainda continuo buscando, ainda estou “ em obras” , continuarei ”em obras” até Jesus voltar .
+
+Foi então, que Deus me diz anuncie isso aonde você for este será seu ministério.
+Hoje Deus me deu pessoas e uma igreja, Pastores que
+Adotaram-me, e me dão a oportunidade de não mais sozinha, mas com toda uma igreja e um ministério onde todos abraçaram esta visão, Precisamos ter Intimidade com Deus. E vamos anunciar isso!
+Tive a oportunidade de gravar o primeiro Cd do ministério ainda sozinha, “Quero ser adorador” E agora estamos a caminho do segundo, ao vivo “Dependo de Ti” com toda a igreja, este ministério agora é da Batista Central de Timóteo. Mas este ministério nasceu sem CD,com apenas uma pessoa, desesperada para ter mais de Deus, e que teve que ser tratada para alcançar os sonhos de Deus, Ministério é vida na vida como diz meu Pastor Teko Resende, as outras coisa são o acrescentar de Deus para a expansão do seu Reino. Vamos buscar intimidade com Deus!
+	</div>
+</div>
+<div class="pag" id="fotos">c</div>
+<div class="paw" id="blog">
+  <div class="post">
+        <div class="title">Teste1</div>
+        <div class="content">
+        	Pra mim é um prazer falar sobre o surgimento do ministério, é engraçado porque ele surgiu em minha vida sem eu saber que futuramente viria a ser um ministério, Deus tem os seus mistérios!
+Lembro-me bem que eu era uma cristã superficial, sem experiências com Deus, sem nenhuma persistência, apenas 
+uma religiosa.
+E num belo dia, eu fiz uma oração que hoje considero muito desaforada, disse assim para Deus: “Senhor, tu sabes 
+que amo te adorar, e quando as coisas estão bem te adoro melhor ainda, então providencie para que tudo fique 
+bem comigo e eu te adorarei melhor”. Que tragédia esta oração, quanta imaturidade, que vergonha sinto hoje de 
+ter feito isso, conto porque faz parte da História do Ministério, senão guardaria para mim. Mas Deus é Deus e ama 
+seus filhos e sei que sua resposta para mim foi enxergar o que viria pela frente, o tratamento de Deus em nós é 
+sempre visando o que ele mesmo está preparando pra nós futuramente. Então delicadamente, Ele me respondeu 
+assim: “Vânia, posso te dar tudo o que você precisa e sonha, mas antes preciso te fazer me adorar pelo que eu sou, 
+não pelo que eu possa te dar, VOCÊ NÃO TEM INTIMIDADE COMIGO E PRECISO TE ENSINAR ISSO. 
+Houve um silêncio...
+      </div>
+        <div class="data">07/01/1994</div>
+    </div>
+  <div class="post">
+        <div class="title">Teste2</div>
+        <div class="content">
+        	Pra mim é um prazer falar sobre o surgimento do ministério, é engraçado porque ele surgiu em minha vida sem eu saber que futuramente viria a ser um ministério, Deus tem os seus mistérios!
+Lembro-me bem que eu era uma cristã superficial, sem experiências com Deus, sem nenhuma persistência, apenas 
+uma religiosa.
+E num belo dia, eu fiz uma oração que hoje considero muito desaforada, disse assim para Deus: “Senhor, tu sabes 
+que amo te adorar, e quando as coisas estão bem te adoro melhor ainda, então providencie para que tudo fique 
+bem comigo e eu te adorarei melhor”. Que tragédia esta oração, quanta imaturidade, que vergonha sinto hoje de 
+ter feito isso, conto porque faz parte da História do Ministério, senão guardaria para mim. Mas Deus é Deus e ama 
+seus filhos e sei que sua resposta para mim foi enxergar o que viria pela frente, o tratamento de Deus em nós é 
+sempre visando o que ele mesmo está preparando pra nós futuramente. Então delicadamente, Ele me respondeu 
+assim: “Vânia, posso te dar tudo o que você precisa e sonha, mas antes preciso te fazer me adorar pelo que eu sou, 
+não pelo que eu possa te dar, VOCÊ NÃO TEM INTIMIDADE COMIGO E PRECISO TE ENSINAR ISSO. 
+Houve um silêncio...
+      </div>
+        <div class="data">07/01/1994</div>
+    </div>
+  <div class="post">
+        <div class="title">Teste3</div>
+      <div class="content">
+       	  Pra mim é um prazer falar sobre o surgimento do ministério, é engraçado porque ele surgiu em minha vida sem eu saber que futuramente viria a ser um ministério, Deus tem os seus mistérios!
+Lembro-me bem que eu era uma cristã superficial, sem experiências com Deus, sem nenhuma persistência, apenas 
+uma religiosa.
+E num belo dia, eu fiz uma oração que hoje considero muito desaforada, disse assim para Deus: “Senhor, tu sabes 
+que amo te adorar, e quando as coisas estão bem te adoro melhor ainda, então providencie para que tudo fique 
+bem comigo e eu te adorarei melhor”. Que tragédia esta oração, quanta imaturidade, que vergonha sinto hoje de 
+ter feito isso, conto porque faz parte da História do Ministério, senão guardaria para mim. Mas Deus é Deus e ama 
+seus filhos e sei que sua resposta para mim foi enxergar o que viria pela frente, o tratamento de Deus em nós é 
+sempre visando o que ele mesmo está preparando pra nós futuramente. Então delicadamente, Ele me respondeu 
+assim: “Vânia, posso te dar tudo o que você precisa e sonha, mas antes preciso te fazer me adorar pelo que eu sou, 
+não pelo que eu possa te dar, VOCÊ NÃO TEM INTIMIDADE COMIGO E PRECISO TE ENSINAR ISSO. 
+Houve um silêncio...
+    </div>
+        <div class="data">07/01/1994</div>
+    </div>
+</div>
+<div class="pag" id="agenda">
+  <div class="event">
+    	<div class="title">Dia 03/09/13 - Uberlandia, Igreja de Deus</div>
+        <div class="content">
+            <p>Local: Igreja de deus, av 5644 bairro 59435</p>
+            <p>Horário: 19:30</p>
+            <p>Data: 03/09/13</p>
+        </div>
+    </div>
+  <div class="event">
+   	<div class="title">Dia 03/09/13 - Uberlandia, Igreja de Deus</div>
+        <div class="content">
+            <p>Local: Igreja de deus, av 5644 bairro 59435</p>
+            <p>Horário: 19:30</p>
+            <p>Data: 03/09/13</p>
+        </div>
+    </div>
+  <div class="event">
+    	<div class="title">Dia 03/09/13 - Uberlandia, Igreja de Deus</div>
+        <div class="content">
+            <p>Local: Igreja de deus, av 5644 bairro 59435</p>
+            <p>Horário: 19:30</p>
+            <p>Data: 03/09/13</p>
+        </div>
+    </div>
+  <div class="event">
+    	<div class="title">Dia 03/09/13 - Uberlandia, Igreja de Deus</div>
+        <div class="content">
+            <p>Local: Igreja de deus, av 5644 bairro 59435</p>
+            <p>Horário: 19:30</p>
+            <p>Data: 03/09/13</p>
+        </div>
+    </div>
+    <div class="event">
+    	<div class="title">Dia 03/09/13 - Uberlandia, Igreja de Deus</div>
+        <div class="content">
+            <p>Local: Igreja de deus, av 5644 bairro 59435</p>
+            <p>Horário: 19:30</p>
+            <p>Data: 03/09/13</p>
+        </div>
+    </div>
+</div>
+<div class="paw" id="produtos">f</div>
+<div class="pag" id="contato">
+<form action="contato.php" method="post" name="contato" target="load">
+<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td align="center" valign="middle"><input name="nome" type="text" id="nome" placeholder="Nome" onClick="this.focus()"></td>
+  </tr>
+  <tr>
+    <td align="center" valign="middle"><input name="email" type="text" id="email" placeholder="E-mail" onClick="this.focus()"></td>
+  </tr>
+  <tr>
+    <td align="center" valign="middle"><textarea name="mensagem" rows="8" id="mensagem" placeholder="Mensagem" onClick="this.focus()"></textarea></td>
+  </tr>
+  <tr>
+    <td align="center" valign="middle"><input name="ok" type="submit" value="Enviar" onclick="document.contato.submit();"></td>
+  </tr>
+</table>
+</form>
+</div>
+<iframe name="load" style="visibility:hidden;"></iframe>
+<img id="load" src="img/loadingorange.gif" alt="Load...">
+</body>
+</html>

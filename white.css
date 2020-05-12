@@ -1,0 +1,30 @@
+@charset "utf-8";
+.paw{
+	color: #666;
+	background-color: #FFF;
+}
+.white #menu{
+	background-color: #f4f4f4;
+	color: #666;
+}
+.white *{
+	cursor: default;
+	font-family: "Segoe UI";
+	font-weight: lighter;
+}
+.white #menu #titulo{
+	color: #ff7d23;
+}
+.white #menu .btn{
+	color: #666;
+}
+.white #menu .btn, .white #menu .btnsel{
+	font-size: 20px;
+}
+.white #menu .btn:hover, .white #menu .btnsel:hover{
+	color: #666;
+	background-color: #dedede;
+}
+.white #menu .btnsel{
+	color: #FFF;
+}

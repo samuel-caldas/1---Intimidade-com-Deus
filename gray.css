@@ -1,0 +1,30 @@
+@charset "utf-8";
+.pag{
+	color: #FFF;
+	background-color: #585858;
+}
+.gray #menu{
+	background-color: #696969;
+	color: #FFF;
+}
+.gray *{
+	cursor: default;
+	font-family: "Segoe UI";
+	font-weight: lighter;
+}
+.gray #menu #titulo{
+	color: #fff;
+}
+.gray #menu .btn{
+	color: #FFF;
+}
+.gray #menu .btn, .gray #menu .btnsel{
+	font-size: 20px;
+}
+.gray #menu .btn:hover, .gray #menu .btnsel:hover{
+	color: #FFF;
+	background-color: #7c7c7c;
+}
+.gray #menu .btnsel{
+	color: #FFF;
+}
